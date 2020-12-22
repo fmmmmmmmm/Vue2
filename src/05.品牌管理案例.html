@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+  </head>
+  <body>
+    <div id="app">
+      <div class="panel panel-primary">
+        <div class="panel-heading">品牌管理</div>
+        <div class="panel-body form-inline">
+          <!--
+            ref="idRef" 可以获取页面元素的引用
+            在js代码中可以通过this.$refs.idRef 来引用当前的input
+          -->
+          <label>
+            Id:
+            <input type="text" class="form-control" v-model="id" v-focus ref="idRef">
+          </label>
+          <label>
+            Name:
+            <input type="text" class="form-control" v-color="'green'" v-model="name" @keyup.enter="add()">
+          </label>
+          <label>
+            Keywords:
+            <input type="text" class="form-control" v-model="keywords">
+          </label>
+          <input type="button" value="添加" class="btn btn-primary" @click="add()">
+        </div>
+      </div>
+      <table class="table table-bordered table-striped table-hover">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Ctime</th>
+          <th>Operation</th>
+        </tr>
+        <tr v-for="item in search" :key="item.id">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.ctime | dateFormat('yyyy-MM-dd HH:mm:ss')}}</td>
+          <td><a href="#" class="btn btn-default" @click.prevent = "del(item.id)">删除</a></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</body>
+</html>

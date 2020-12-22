@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .red {
+        color: red;
+      }
+
+      .thin {
+        font-weight: 200;
+      }
+
+      .italic {
+        font-style: italic;
+      }
+
+      .active {
+        letter-spacing: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!--样式操作方式1：通过:class来绑定样式-->
+      <h1 class="red thin italic">
+        这是一个很大很大的H1，大到你无法想象！！！
+      </h1>
+      <h1 v-bind:class="'red'">这是一个很大很大的H1，大到你无法想象！！！</h1>
+      <h1 :class="['thin', 'italic']">
+        这是一个很大很大的H1，大到你无法想象！！！
+      </h1>
+      <h1 :class="['thin', 'italic',{'red':false}]">
+        这是一个很大很大的H1，大到你无法想象！！！
+      </h1>
+      <h1 :class="['thin', 'italic',flag?'red':'']">
+        这是一个很大很大的H1，大到你无法想象！！！
+      </h1>
+      <h1 :class="classObj">这是一个很大很大的H1，大到你无法想象！！！</h1>
+
+       <!--样式操作方式2：通过:style来绑定样式-->
+       <h3 :style="{color:'red',fontSize:'24px'}">这是h3</h3>
+       <h3 :style="styleObj1">这是h3</h3>
+       <h3 :style="styleObj2">这是h3</h3>
+       <h3 :style="[styleObj1,styleObj2]">这是h3</h3>
+
+       <!--写样式的时候，一般会用class的方式来指定，style的方式不常用-->
+    </div>
+  </body>
+</html>

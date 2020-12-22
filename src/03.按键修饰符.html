@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" @keyup.enter="enterHandler">
+      <input @keyup.alt.67="clear">
+      <div @click.ctrl="doSomething">Do something</div>
+      <input @keyup.alt.ooo="keyupHandler">
+    </div>
+  </body>
+</body>
+</html>

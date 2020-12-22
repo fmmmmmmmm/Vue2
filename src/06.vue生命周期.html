@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+  </head>
+  <body>
+    <div id="app">
+      {{msg}}
+      <button @click="modify">点我修改msg</button>
+
+      <input type="text" v-if="flag" ref="inputRef">
+      <button @click="modifyFlag">点我修改flag</button>
+    </div>
+
+    <template id="app2">
+      <div>测试模板</div>
+    </template>
+  </body>
+</body>
+</html>
